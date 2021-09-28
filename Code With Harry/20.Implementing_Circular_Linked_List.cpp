@@ -34,6 +34,39 @@ struct Node *InsertAtFirst(struct Node *First, int data)
     return InsertedAtFirst;
 }
 
+
+struct Node*InsertAtIndex(struct Node*First, int data, int index)
+{
+    struct Node*ptr = (struct Node*)malloc(sizeof(struct Node));
+    struct Node*p = First;
+    int i = 0;
+
+    while (i != index-1)
+    {
+        p = p->next;
+        i++;
+    }
+    ptr->number = data;
+    ptr->next = p->next;
+    p->next = ptr;
+    return First;
+}
+
+
+struct Node*InsertAtEnd(struct Node*First, int data)
+{
+    struct Node*ptr = (struct Node*)malloc(sizeof(struct Node));
+    struct Node*p = First;
+
+    while (p->next != First)
+    {
+       p = p->next;
+    }
+    ptr->number = data;
+    ptr->next = First;
+    return First;
+}
+
 int main()
 {
     struct Node *First;
@@ -66,9 +99,29 @@ int main()
     cout<<"List Before Insertion : "<<endl;
     Display(First);
 
-    cout<<"List After Insertion : "<<endl;
-    struct Node *x;
-    x = InsertAtFirst(First, 0);
-    Display(x);
+
+    //1. Inserting Element at First Position
+    // struct Node *x;
+    // x = InsertAtFirst(First, 0);
+    // cout<<"List After Insertion : "<<endl;
+    // Display(x);
+    
+
+    // 2.Inserting Element at Given Index.
+    // struct Node *x;
+    // cout<<"List After Insertion : "<<endl;
+    // x = InsertAtIndex(First, 100, 2);
+    // Display(x);
+
+
+    // 3.Inserting Element at End of List;
+    // struct Node *x;
+    // cout<<"List After Insertion : "<<endl;
+    // x = InsertAtEnd(First, 200);
+    // Display(x);
+
+    //In Inserting at End : Above Code is perfect but if we Try to display then we will not
+    // get desired output because that loop of Display function is stopping at First Function 
+    // but we have inserted new node.
     return 0;
 }
