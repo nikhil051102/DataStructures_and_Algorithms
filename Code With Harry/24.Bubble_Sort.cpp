@@ -6,6 +6,10 @@ using namespace std;
 //This algo is Stable algorithm.
 //This algo is in-place sorting algorithm.
 
+//Adaptive Algorithm : If the algorithm detects that array is already sorted then it will not perform any operation.
+//Stable Algorithm : If two equal elements are compared then algorithm don't change their position.
+
+
 void PrintArray(int *A, int n)
 {
     for (int i = 0; i < n; i++)
