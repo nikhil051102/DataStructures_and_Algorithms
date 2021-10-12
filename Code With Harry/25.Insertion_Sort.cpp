@@ -7,26 +7,26 @@ using namespace std;
 //3.Worst Case : O(N^2)
 //4.Best Case : O(N)
 //5.Stable Algorithm.
+//6.Adaptive Algorithm.
 
-void PrintArray(int *A, int n)
+void Insertion_Sort(int *A, int n)
+{
+
+}
+
+void Display(int *A, int n)
 {
     for (int i = 0; i < n; i++)
     {
-        cout << A[i] << " ";
-    }
-    cout << endl;
-}
-
-void insertionSort(int *A, int n)
-{
-
+        cout<<A[i]<<" ";
+    } 
 }
 
 int main()
 {
-    int A[] = {12, 54, 43, 21, 1, 20};
+    int A[] = {12, 54, 65, 7, 23, 9};
     int n = 6;
-    PrintArray(A, n);
-    insertionSort(A,n);
+    Display(A, n);
+    // Insertion_Sort(A, n);
     return 0;
 }
