@@ -26,6 +26,18 @@ struct Node *push(struct Node *top,int value)
     return top;
 }
 
+int pop(struct Node *top)
+{
+    struct Node* last=top;
+    top=top->address;
+    int element=last->data;
+    free(last);
+    return element;
+
+}
+
+
+
 
 int main()
 {
@@ -37,6 +49,10 @@ int main()
     top=push(top,766);
     top=push(top,123);
     display(top);
+    int value=pop(top);
+    cout<<"the poped value is"<<value;
+
+
 
 
     return 0;
