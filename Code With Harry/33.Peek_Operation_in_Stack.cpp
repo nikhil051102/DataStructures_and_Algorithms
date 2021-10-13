@@ -7,7 +7,7 @@ struct Stack
     int top;
     int *array;
 };
-//Arrow Operator(->) : Dereferancing ke baad '.' operator laga deta hai.
+
 int isEmpty(struct Stack *ptr)
 {
     if (ptr->top == -1)
@@ -32,34 +32,43 @@ int isFull(struct Stack *ptr)
     }
 }
 
+void push(struct Stack *ptr,int value)
+{
+    ptr->top++;
+    ptr->array[ptr->top]=value;
+}
+
+
+int peek(struct Stack *ptr, int i)
+{
+    if(isEmpty(ptr))
+    {
+        return -1;
+    }
+    else
+    {   
+        int arrayindex=ptr->top-i+1;
+        return ptr->array[arrayindex];
+    }
+}
+
 int main()
 {
-    //1. Push Method
     struct Stack *s;
     s = (struct Stack*)malloc(sizeof(struct Stack));
     s->size = 10;
     s->top = -1;
     s->array = (int *)malloc(s->size*sizeof(int));
 
-    if (isFull(s))
-    {
-        s->top++;
-        s->array[s->top] = 5;
-    }
-    
+    push(s,899);
+    push(s,9);
+    push(s,13);
+    push(s,65);
 
-    //2. Pop/Push Method
 
-    if(isEmpty(s))
+    for(int j=1;j<=s->top+1;j++)
     {
-        cout<<"Stack Underflow";
-        return -1; 
-    }
-    else
-    {
-        int val = s->array[s->top];
-        s->top--;
-        return val; 
+        cout<<peek(s,j)<<endl;
     }
     return 0;
 }
