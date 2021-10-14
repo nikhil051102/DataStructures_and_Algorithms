@@ -8,12 +8,6 @@ using namespace std;
 //Head is Top and Tail(Last Node) is Bottom.
 //Stack will overflow when Heap memory is Exhausted.
 
-struct Stack
-{
-    int size;
-    int top;
-    struct Node;
-};
 
 struct Node
 {
