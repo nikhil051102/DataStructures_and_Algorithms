@@ -2,6 +2,7 @@
 using namespace std;
 
 // Problem Statement : https://youtu.be/8CACsqPWpHo
+//Time Complexity = O(n) where n = length of longest node.
 
 //Defining Structure for Linked List
 struct Node
