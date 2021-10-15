@@ -21,23 +21,46 @@ int LinkedListTraversal(struct Node *ptr)
     return count;
 }
 
-int Intersection_Point(struct Node *ptr1, struct Node *ptr2, int x1, int x2)
+int IntersectionPoint(struct Node*&head1, struct Node*&head2)
 {
-    int count = 0;
-    for (int i = 0; i < x1 - x2; i++)
+    int x1 = LinkedListTraversal(head1);
+    int x2 = LinkedListTraversal(head2);
+
+    int d = 0;
+    struct Node*ptr1;  //This Pointer will point large node
+    struct Node*ptr2;  //This pointer will point small node
+    
+    if (x1>x2)
+    {
+        d = x1-x2;
+        ptr1 = head1;
+        ptr2 = head2;
+    }
+    else
+    {
+        d = x2-x1;
+        ptr1 = head2;  //Bcz Second Node is largest here.
+        ptr2 = head1;
+    }
+
+    //Largest Node will be traversed equal to the length of difference between nodes
+    while (d)
     {
         ptr1 = ptr1->next;
+        d--;
     }
-    for (int j = 0; j < x2; j++)
+    
+    //Here we will run pointer on both lists at the same time to look for intersection point.
+    while (ptr1 != NULL && ptr2 != NULL)
     {
+        if(ptr1==ptr2)
+        {
+            return ptr1->data;
+        }
         ptr1 = ptr1->next;
         ptr2 = ptr2->next;
-        while (ptr1->next == ptr2->next)
-        {
-            count++;
-        }
     }
-    return count;
+    return -1;
 }
 
 int main()
@@ -81,7 +104,6 @@ int main()
     int x2 = LinkedListTraversal(Node2_ka_1);
     cout << "Number of Elements in Node 2 : " << x2 << endl;
 
-    cout << Intersection_Point(Node1_ka_1, Node2_ka_1, x1, x2) << endl;
-
+    cout<<IntersectionPoint(Node1_ka_1, Node2_ka_1)<<endl;
     return 0;
 }
