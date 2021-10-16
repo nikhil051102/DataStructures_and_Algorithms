@@ -35,9 +35,9 @@ struct Node *Insert_Node(struct Node *head, int data)
 
 struct Node *Merge_Node(Node *head1, Node *head2)
 {
-    struct Node *ptr1;
-    struct Node *ptr2;
-    struct Node *DummyNode = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *ptr1 = head1;
+    struct Node *ptr2 = head2;
+    struct Node *DummyNode = (struct Node*)malloc(sizeof(struct Node));
     struct Node *ptr3 = DummyNode;
 
     while (ptr1 != NULL && ptr2 != NULL)
@@ -89,6 +89,7 @@ int main()
     Traversal(Node1_1);
     cout<<endl;
     Traversal(Node1_2);
+    cout<<endl;
 
     struct Node *x = Merge_Node(Node1_1, Node1_2);
     Traversal(x);
