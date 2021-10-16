@@ -31,6 +31,7 @@ void pop(struct Stack *ptr)
     ptr->top--;
 }
 
+
 int main()
 {
     int n;
@@ -42,7 +43,7 @@ int main()
     s->top = -1;
     s->array = (char *)malloc(s->size * sizeof(char));
 
-    cout << "Enter Charaterse : ";
+    cout << "Enter Characters : ";
     char array[n];
     for (int i = 0; i < n; i++)
     {
@@ -63,11 +64,15 @@ int main()
 
     if (isEmpty(s))
     {
-        cout<<"Operation Successful";
+        cout<<"Operation Successful"<<endl;
     }
-    else
+    else if (s->top <-1)
     {
-        cout<<"Operation Unsuccessful";
+        cout<<"Stack Underflow by "<<(s->top - (-1))<<endl;
+    }
+    else if (s->top > -1)
+    {
+        cout<<"Stack Overflow by "<<(s->top -(-1))<<endl;
     }
     return 0;
 }
