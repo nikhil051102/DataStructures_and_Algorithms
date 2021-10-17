@@ -70,7 +70,7 @@ struct Node *Merge_Node(Node *head1, Node *head2)
 
     return DummyNode->address;
 }
-
+ 
 int main()
 {
     struct Node *Node1_1 = (struct Node *)malloc(sizeof(struct Node));
