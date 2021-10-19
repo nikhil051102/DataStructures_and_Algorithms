@@ -8,7 +8,7 @@ struct Stack
     char *array;
 };
 
-int isEmpty(struct Stack *ptr)
+int isEmpty(struct Stack*ptr)
 {
     if (ptr->top == -1)
     {
@@ -20,59 +20,97 @@ int isEmpty(struct Stack *ptr)
     }
 }
 
-void push(struct Stack *ptr, char value)
+int isFull(struct Stack*ptr)
 {
-    ptr->top++;
-    ptr->array[ptr->top] = value;
+    if (ptr->top == ptr->size)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
-void pop(struct Stack *ptr)
+void push(struct Stack*ptr , char s)
 {
-    ptr->top--;
+    if (isFull(ptr))
+    {
+        cout<<"Stack Overflow "<<endl;
+    }
+    else
+    {
+        ptr->top++;
+        ptr->array[ptr->top] = s;
+    }
 }
 
+void pop(struct Stack*ptr)
+{
+    if (isEmpty(ptr))
+    {
+        cout<<"Stack Underflow "<<endl;
+    }
+    else
+    {
+        ptr->top--;
+    }
+}
 
 int main()
 {
     int n;
-    cout << "Number of Elements to be Stored : ";
-    cin >> n;
+    cout<<"Number of Characters in Input : ";
+    cin>>n;
 
-    struct Stack *s = (struct Stack *)malloc(sizeof(struct Stack));
-    s->size = n;
-    s->top = -1;
-    s->array = (char *)malloc(s->size * sizeof(char));
-
-    cout << "Enter Characters : ";
-    char array[n];
+    char input[n];
+    cout<<"Enter Characters one by one :"<<endl;
     for (int i = 0; i < n; i++)
     {
-        cin >> array[i];
+        cin>>input[i];
     }
+    
+    struct Stack *s = (struct Stack*)malloc(sizeof(struct Stack));
+    s->size = n;
+    s->top = -1;
+    s->array = (char *)malloc(s->size*sizeof(char));
 
     for (int j = 0; j < n; j++)
     {
-        if (array[j] == '(')
+        if (input[j] == '{' or input[j] == '[' or input[j] == '(')
         {
-            push(s, array[j]);
+            push(s, input[j]);
         }
-        else if (array[j] == ')')
+        else if (input[j] == '}' )
         {
-            pop(s);
+            if (s->array[s->top-1] == '}')
+            {
+                pop(s);
+            }
+        }
+        else if (input[j] == ']')
+        {
+            if (s->array[s->top-1] == ']')
+            {
+                pop(s);
+            }
+        }
+        else if (input[j] == ')')
+        {
+            if (s->array[s->top-1] == ')')
+            {
+                pop(s);
+            }
         }
     }
-
+    
     if (isEmpty(s))
     {
-        cout<<"Operation Successful"<<endl;
+        cout<<"Balanced Statement";
     }
-    else if (s->top <-1)
+    else
     {
-        cout<<"Stack Underflow by "<<(s->top - (-1))<<endl;
-    }
-    else if (s->top > -1)
-    {
-        cout<<"Stack Overflow by "<<(s->top -(-1))<<endl;
+        cout<<"Unbalanced Statement";
     }
     return 0;
 }
