@@ -8,7 +8,7 @@ struct Stack
     char *array;
 };
 
-int isEmpty(struct Stack*ptr)
+int isEmpty(struct Stack *ptr)
 {
     if (ptr->top == -1)
     {
@@ -20,9 +20,9 @@ int isEmpty(struct Stack*ptr)
     }
 }
 
-int isFull(struct Stack*ptr)
+int isFull(struct Stack *ptr)
 {
-    if (ptr->top == ptr->size)
+    if (ptr->top == ptr->size-1)
     {
         return 1;
     }
@@ -32,11 +32,11 @@ int isFull(struct Stack*ptr)
     }
 }
 
-void push(struct Stack*ptr , char s)
+void push(struct Stack *ptr, char s)
 {
     if (isFull(ptr))
     {
-        cout<<"Stack Overflow "<<endl;
+        cout << "Stack Overflow " << endl;
     }
     else
     {
@@ -45,11 +45,11 @@ void push(struct Stack*ptr , char s)
     }
 }
 
-void pop(struct Stack*ptr)
+void pop(struct Stack *ptr)
 {
     if (isEmpty(ptr))
     {
-        cout<<"Stack Underflow "<<endl;
+        cout << "Stack Underflow " << endl;
     }
     else
     {
@@ -60,20 +60,20 @@ void pop(struct Stack*ptr)
 int main()
 {
     int n;
-    cout<<"Number of Characters in Input : ";
-    cin>>n;
+    cout << "Number of Characters in Input : ";
+    cin >> n;
 
     char input[n];
-    cout<<"Enter Characters one by one :"<<endl;
+    cout << "Enter Characters one by one :" << endl;
     for (int i = 0; i < n; i++)
     {
-        cin>>input[i];
+        cin >> input[i];
     }
-    
-    struct Stack *s = (struct Stack*)malloc(sizeof(struct Stack));
+
+    struct Stack *s = (struct Stack *)malloc(sizeof(struct Stack));
     s->size = n;
     s->top = -1;
-    s->array = (char *)malloc(s->size*sizeof(char));
+    s->array = (char *)malloc(s->size * sizeof(char));
 
     for (int j = 0; j < n; j++)
     {
@@ -81,36 +81,36 @@ int main()
         {
             push(s, input[j]);
         }
-        else if (input[j] == '}' )
+        else if (input[j] == '}')
         {
-            if (s->array[s->top-1] == '}')
+            if (s->array[s->top] == '{')
             {
                 pop(s);
             }
         }
         else if (input[j] == ']')
         {
-            if (s->array[s->top-1] == ']')
+            if (s->array[s->top] == '[')
             {
                 pop(s);
             }
         }
         else if (input[j] == ')')
         {
-            if (s->array[s->top-1] == ')')
+            if (s->array[s->top] == '(')
             {
                 pop(s);
             }
         }
     }
-    
+
     if (isEmpty(s))
     {
-        cout<<"Balanced Statement";
+        cout << "Balanced Statement";
     }
     else
     {
-        cout<<"Unbalanced Statement";
+        cout << "Unbalanced Statement";
     }
     return 0;
 }

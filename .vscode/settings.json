@@ -29,6 +29,8 @@
         "vector": "cpp",
         "istream": "cpp",
         "array": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "queue": "cpp",
+        "stack": "cpp"
     }
 }
