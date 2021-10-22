@@ -1,5 +1,17 @@
 #include <iostream>
+#include <string>
 using namespace std;
+
+struct Stack
+{
+    int size;
+    int top;
+    char *array;
+};
+
+char * InfixToPostfix(char *infix, int n)
+{
+}
 
 int main()
 {
@@ -10,5 +22,14 @@ int main()
     //          +ab, -pq, /xy
     //3) Postfix : operand1 operand2 <operator>
     //          ab+, pq-, xy/
+
+    int n;
+    char infix[n];
+    cout<<"Infix Expression : "<<endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin>>infix[i];
+    }
+
     return 0;
 }
