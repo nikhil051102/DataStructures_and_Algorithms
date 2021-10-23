@@ -1,14 +1,20 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-struct Stack
+struct stack
 {
     int size;
     int top;
-    char *array;
+    char *arr;
 };
 
-int isEmpty(Stack*ptr)
+int stackTop(struct stack *sp)
+{
+    return sp->arr[sp->top];
+}
+
+int isEmpty(struct stack *ptr)
 {
     if (ptr->top == -1)
     {
@@ -20,18 +26,9 @@ int isEmpty(Stack*ptr)
     }
 }
 
-int StackTop(Stack*ptr)
+int isFull(struct stack *ptr)
 {
-    return ptr->array[ptr->top];
-}
-
-int Precedence(char ch)
-{
-    if (ch == '*' || ch == '/')
-    {
-        return 2;
-    }
-    else if (ch == '+' || ch == '-')
+    if (ptr->top == ptr->size - 1)
     {
         return 1;
     }
@@ -39,98 +36,94 @@ int Precedence(char ch)
     {
         return 0;
     }
+}
+
+void push(struct stack *ptr, char val)
+{
+    if (isFull(ptr))
+    {
+        printf("Stack Overflow! Cannot push %d to the stack\n", val);
+    }
+    else
+    {
+        ptr->top++;
+        ptr->arr[ptr->top] = val;
+    }
+}
+
+char pop(struct stack *ptr)
+{
+    if (isEmpty(ptr))
+    {
+        printf("Stack Underflow! Cannot pop from the stack\n");
+        return -1;
+    }
+    else
+    {
+        char val = ptr->arr[ptr->top];
+        ptr->top--;
+        return val;
+    }
+}
+int precedence(char ch)
+{
+    if (ch == '*' || ch == '/')
+        return 3;
+    else if (ch == '+' || ch == '-')
+        return 2;
+    else
+        return 0;
 }
 
 int isOperator(char ch)
 {
-    if (ch == '+' || ch =='-' || ch == '*' || ch == '/')
-    {
+    if (ch == '+' || ch == '-' || ch == '*' || ch == '/')
         return 1;
-    }
     else
-    {
         return 0;
-    }
 }
-
-void push(Stack*sp, char value)
+char *infixToPostfix(char *infix)
 {
-    sp->top++;
-    sp->array[sp->top] = value;
-}
-
-char pop(Stack*sp)
-{
-    char val = sp->array[sp->top];
-    sp->top--;
-    return val;
-}
-
-char *InfixToPostfix(char *Infix, int n)
-{
-    struct Stack *sp;
-    sp->size = n;
+    struct stack *sp = (struct stack *)malloc(sizeof(struct stack));
+    sp->size = 10;
     sp->top = -1;
-    sp->array = (char *)malloc(sp->size*sizeof(char));
-    
-    char *Postfix = (char *)malloc((n+1)*sizeof(char));
-    int i = 0;
-    int j = 0;
-
-    while (i != n)
+    sp->arr = (char *)malloc(sp->size * sizeof(char));
+    char *postfix = (char *)malloc((strlen(infix) + 1) * sizeof(char));
+    int i = 0; // Track infix traversal
+    int j = 0; // Track postfix addition
+    while (infix[i] != '\0')
     {
-        if(!isOperator(Infix[i]))
+        if (!isOperator(infix[i]))
         {
-            Postfix[j] = Infix[i];
-            i++;
+            postfix[j] = infix[i];
             j++;
+            i++;
         }
         else
         {
-            if (Precedence(Infix[i]) < Precedence(StackTop(sp)))
+            if (precedence(infix[i]) > precedence(stackTop(sp)))
             {
-                push(sp, Infix[i]);
+                push(sp, infix[i]);
                 i++;
             }
             else
             {
-                Postfix[i] = pop(sp);
+                postfix[j] = pop(sp);
                 j++;
             }
-
         }
-        while (!isEmpty(sp))
-        {
-            Postfix[j] = pop(sp);
-            j++;
-        }
-        
     }
-    return Postfix;
+    while (!isEmpty(sp))
+    {
+        postfix[j] = pop(sp);
+        j++;
+    }
+    postfix[j] = '\0';
+    return postfix;
 }
-
 int main()
 {
-    //Notations to write an Expressions.
-    //1) Infix : operand <operator> operand
-    //          a)a+b b)p/q c)a-b d)x-4
-    //2) Prefix : <operator> operand1 operand2
-    //          +ab, -pq, /xy
-    //3) Postfix : operand1 operand2 <operator>
-    //          ab+, pq-, xy/
-
-    int n;
-    cout<<"Number of Characters : ";
-    cin>>n;
-
-    char expression[n];
-    cout<<"Enter Characters : "<<endl;
-    for (int i = 0; i < n; i++)
-    {
-        cin>>expression[i];
-    }
-
-    char *Postfix = InfixToPostfix(expression, n);
-    
+    char *infix = "x-y/z-k*d";
+    printf("postfix is %s", infixToPostfix(infix));
     return 0;
 }
