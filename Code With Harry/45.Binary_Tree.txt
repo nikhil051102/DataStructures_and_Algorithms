@@ -1,0 +1,12 @@
+Binary Tree is the tree in which every node has degree less than or equal to 2.
+--> Tree is made of Nodes and Edges.
+--> If n nodes then there will be n-1 nodes.
+--> Degree  of node: Number of Direct Children.
+--> Degree of Tree : Highest degree of any node among the Tree.
+--> Binary Tree is the tree of Degree <= 2.
+--> Tree is Non-Linear structure which is Ideal for representing Hierarchical Data.
+
+
+
+★ Types of Binary Trees:
+1) Full or Strict Binary Stree 
