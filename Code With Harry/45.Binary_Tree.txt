@@ -9,4 +9,6 @@ Binary Tree is the tree in which every node has degree less than or equal to 2.
 
 
 ★ Types of Binary Trees:
-1) Full or Strict Binary Stree 
+1) Full or Strict Binary Stree : All nodes have 0 or 2 children.
+2) Perfect Binary Tree : Internal Nodes have 2 children and All nodes are on same level.
+3) Complete Binary Tree : All levels are filled except the last level and last level must have its keys as left as possible.
