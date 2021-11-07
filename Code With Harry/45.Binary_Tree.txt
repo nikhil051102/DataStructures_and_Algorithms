@@ -12,3 +12,11 @@ Binary Tree is the tree in which every node has degree less than or equal to 2.
 1) Full or Strict Binary Stree : All nodes have 0 or 2 children.
 2) Perfect Binary Tree : Internal Nodes have 2 children and All nodes are on same level.
 3) Complete Binary Tree : All levels are filled except the last level and last level must have its keys as left as possible.
+4) Degenrate Tree : Every Parent Node has only one child.
+5) Skewed Tree : If Degenrate is left aligned then it is Left Skewed Tree and If on right then it is Right Skewed Tree.
+
+
+
+★ Representation of Binary Tree:
+1) Array Representation 
+-> We don't call Linked Representation as Linked List Representation because list represents Linear Structure but Tree is not Linear.
