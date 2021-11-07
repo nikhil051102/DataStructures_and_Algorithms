@@ -1,0 +1,6 @@
+
+/*
+1) Preorder Traversal : Root --> Left subtree --> Right subtree
+2) Postorder Traversal : Left subtree --> Right subtree --> Root
+3) Inorder Traversal : Left subtree --> Root --> Right subtree
+*/
