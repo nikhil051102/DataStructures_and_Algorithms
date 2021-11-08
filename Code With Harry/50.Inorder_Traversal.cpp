@@ -8,7 +8,7 @@ struct Node
     struct Node*right;
 };
 
-struct Node* createNode(int value)
+struct Node*createNode(int value)
 {
     struct Node*n = (struct Node*)malloc(sizeof(struct Node));
     n->data = value;
@@ -17,13 +17,13 @@ struct Node* createNode(int value)
     return n;
 }
 
-void preOrder(struct Node*root)
+void Inorder(struct Node*root)
 {
-    if (root!= NULL)
+    if (root != NULL)
     {
+        Inorder(root->left);
         cout<<root->data<<" ";
-        preOrder(root->left);
-        preOrder(root->right);
+        Inorder(root->right);
     }
 }
 
@@ -35,21 +35,11 @@ int main()
     struct Node*r3 = createNode(5);
     struct Node*r4 = createNode(2);
 
-    //Connecting Nodes
     root->left = r1;
     root->right = r2;
     r1->left = r3;
     r1->right = r4;
 
-    /*
-    Tree looks like :
-                4
-              /   \
-             1     6
-            / \
-           5   2 
-    */
-    
-    preOrder(root);
+    Inorder(root);
     return 0;
 }
