@@ -1,14 +1,3 @@
-// ★Binary Search Tree
-// --> It is the type of Binary Tree.
-
-
-// ★Properties
-// 1) All Nodes of Left subtree are lesser than the root node.
-// 2) All Nodes of Right subtree are greater than the root node.
-// 3) Left and Right subtree are also Binary Search Tree.
-// 4) There are no duplicate nodes.
-// 5) Inorder Traversal of BST gives the sorted order of the elements.
-
 #include <iostream>
 using namespace std;
 
