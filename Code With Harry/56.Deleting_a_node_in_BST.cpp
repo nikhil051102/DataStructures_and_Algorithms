@@ -1,6 +1,17 @@
 #include <iostream>
 using namespace std;
 
+//Cases while Deleting Node
+// Case 1 : The node is leaf node.
+        //   -> Steps :
+        //   1) Search the Node.
+        //   2) Delete the Node.
+// Case 2 : The node is non-leaf node.
+        //  -> Steps : 
+        //  1) If we delete the non-leaf node then its place will be taken by 'Inorder pre' or 'Inorder post'
+// Case 3 : The node is root node.
+
+
 struct Node
 {
     struct Node*left;
@@ -27,41 +38,6 @@ void Inorder(struct Node*root)
     }
 }
 
-void Insert(Node *root, int key)
-{
-    Node *prev = root;
-    //Finding the right position to insert Node.
-    while (root != NULL)
-    {
-        prev = root;
-        if(key == root->data)
-        {
-            cout<<"Duplicate Node";
-            // exit;
-        }
-        else if (key < root->data)
-        {
-            root = root->left;
-        }
-        else
-        {
-            root = root->right;
-        }
-    }
-    
-    //Here, we will allocate node to its position
-    struct Node*n = createNode(key);
-
-    if (key < prev->data)
-    {
-        prev->left = n;
-    }
-    else
-    {
-        prev->right = n;
-    }
-}
-
 int main()
 {
     Node *root = createNode(8);
@@ -74,6 +50,7 @@ int main()
     Node *r7 = createNode(7);
     Node *r8 = createNode(13);
     Node *r9 = createNode(20);
+    Node *r10 = createNode(9);
 
     root->left = r1;
     root->right = r2;
@@ -82,6 +59,7 @@ int main()
     r4->left = r6;
     r4->right = r7;
     r2->right = r5;
+    r2->left = r10;
     r5->left = r8;
     r5->right = r9;
 
@@ -90,14 +68,11 @@ int main()
                 /      \
                3        10
               / \       / \
-             1   6     N   14
+             1   6     9   14
                 / \       /  \
                4   7     13  20   
     */
 
     Inorder(root);
-    Insert(root, 9);
-    cout<<endl;
-    Inorder(root);
     return 0;
-} 
+}
