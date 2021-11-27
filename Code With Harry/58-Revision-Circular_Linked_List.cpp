@@ -11,13 +11,13 @@ void InsertNodeAtLast(struct Node *head, int value)
 {
     struct Node *n = (struct Node *)malloc(sizeof(struct Node));
     struct Node *ptr = head;
-    while (ptr->next != head)
+    do
     {
         ptr = ptr->next;
-    }
-    n = ptr->next;
+    } while (ptr->next != head);
     n->data = value;
-    n->next = head;
+    n->next = ptr->next;
+    ptr->next = n;
 }
 
 void Traversal(struct Node *head)
