@@ -3,7 +3,7 @@ using namespace std;
 
 //Insertion and deletion of node will be done in 0(1) at Head Node that's why we prefer Head Node for operations.
 //Head will be used for push() and pop() operations.
-//This stack will net overflow bcz of Linked List we can add as many elements as we want.
+//This stack will not overflow bcz of Linked List we can add as many elements as we want.
 //When the head node is pointing towards NULL then this stack is Underflow.
 //Head is Top and Tail(Last Node) is Bottom.
 //Stack will overflow when Heap memory is Exhausted.
