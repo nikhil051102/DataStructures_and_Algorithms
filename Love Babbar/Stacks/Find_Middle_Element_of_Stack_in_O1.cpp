@@ -1,13 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Problem Link : https://www.geeksforgeeks.org/design-a-stack-with-find-middle-operation/ 
-
-struct Stack
-{
-    int top;
-    struct Node;
-};
+// Problem Link : https://www.geeksforgeeks.org/design-a-stack-with-find-middle-operation/
 
 struct Node
 {
@@ -16,17 +10,22 @@ struct Node
     struct Node*next;
 };
 
-void Push(int element)
-{
-    CreateNode(element);
-}
-
-void CreateNode(int element)
+struct Node *Push(struct Node*Top, int value)
 {
     struct Node*n = (struct Node*)malloc(sizeof(struct Node));
-    n->previous = NULL;
-    n->data = element;
-    n->next = NULL;
+    n->data = value;
+    n->previous = Top;
+    n->next = Top;
+    return n;
+}
+
+void ListTraversal(struct Node *ptr)
+{
+    while (ptr->next != NULL)
+    {
+        cout << "Element is " << ptr->data << endl;
+        ptr = ptr->next;
+    }
 }
 // int FindMiddle(struct Stack*s)
 // {
@@ -45,7 +44,11 @@ void CreateNode(int element)
 
 int main()
 {
-    struct Stack*s = (struct Stack*)malloc(sizeof(struct Stack));
-    s->top = -1;
+    struct Node*Top = (struct Node*)malloc(sizeof(struct Node));
+    Top = Push(Top, 100);
+    Top = Push(Top, 200);
+    Top = Push(Top, 300);
+
+    ListTraversal(Top);
     return 0;
 }

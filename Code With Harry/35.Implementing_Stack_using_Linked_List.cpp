@@ -60,8 +60,7 @@ struct Node *push(struct Node *top, int value)
         struct Node *n = (struct Node *)malloc(sizeof(struct Node));
         n->data = value;
         n->address = top;
-        top = n;
-        return top;
+        return n;
     }
 }
 
