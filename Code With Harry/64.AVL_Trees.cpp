@@ -1,5 +1,6 @@
 // Introduction
 /**
+--> AVL is Adelson-Velskii and Landis also known as a height binary tree.
 --> It is height balanced Binary Search Tree
 --> Height difference between height of left and right subtrees for every node is less than or equal to 1.
 --> Balance Factor = Height of right subtree - Height of left subtree.
