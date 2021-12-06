@@ -1,0 +1,34 @@
+Linear Data Structure - Array, Linked List, Stack, Queue;
+Non-Linear Heirarchical Data Structure - Binary Search Tree, AVL Tree.
+Non-Linear Data Structure - Graph.
+
+★ Theory of Graph
+1) Graph is a collection of vertices and edges.
+2) Vertices are the nodes and Edge is line connecting two vertices or nodes.
+3) Graph is collection of nodes connected through edges.
+
+★ Formal Deficition of Graph
+-> A graph G=(V, E) is collection of vertices and edges connecting these vertices.
+-> Used to model Paths in city, social networks, website backlinks, internal employee network, etc.
+-> A vertex or node is one fundamental unit/entity of which graphs are formed.
+-> An edge is uniquely defined by its 2 endpoints.
+-> Directed Edge - One way connection
+-> Undirected Edge - Two way connection
+-> Directed Graph - All edges are directed.
+-> Undirected Graph - All edges are undirected.
+
+★ Indegree & Outdegree of node
+-> Indegree Node - Number of edges coming into the node.
+-> Outdegree Node - Number of edges going out of the node.
+
+★ Ways to Represent a graph.
+-> Adjacency List - Mark the nodes with the list of its neighbors.
+-> Adjacency Matrix - Aij = 1 for an edge between i and j, 0 otherwise.
+-> Edge Set - Store the pair of nodes/vertices connected with an edge. Eg. - {(0,1), (0,2), (1,2), (2,3), (3,4), (4,5)}
+-> Other Implementations to represent a graph also exists. For e.g Compact list representation, cost adjaceny list, cost adjecency matrix, etc.
+
+★ Graph Traversal and its Algorithms
+-> Visiting the nodes of graph is called "Traversing"
+-> Two Algorithms for Graph Traversal as below ;
+-> 1) Breadth First Search (BFS) - Traverses the graph in a breadth first manner. we will use queue to implement this algorithm.
+-> 2) Depth First Search (DFS) - Traverses the graph in a depth first manner. we will use stack to implement this algorithm.
