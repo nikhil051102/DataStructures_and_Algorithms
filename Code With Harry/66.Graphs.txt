@@ -7,7 +7,7 @@ Non-Linear Data Structure - Graph.
 2) Vertices are the nodes and Edge is line connecting two vertices or nodes.
 3) Graph is collection of nodes connected through edges.
 
-★ Formal Deficition of Graph
+★ Formal Definition of Graph
 -> A graph G=(V, E) is collection of vertices and edges connecting these vertices.
 -> Used to model Paths in city, social networks, website backlinks, internal employee network, etc.
 -> A vertex or node is one fundamental unit/entity of which graphs are formed.
