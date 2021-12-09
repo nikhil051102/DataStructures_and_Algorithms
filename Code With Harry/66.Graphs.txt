@@ -14,6 +14,7 @@ Non-Linear Data Structure - Graph.
 -> An edge is uniquely defined by its 2 endpoints.
 -> Directed Edge - One way connection
 -> Undirected Edge - Two way connection
+-> Bidirectional Edge - Two way connection
 -> Directed Graph - All edges are directed.
 -> Undirected Graph - All edges are undirected.
 
