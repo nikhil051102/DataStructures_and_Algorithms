@@ -73,14 +73,8 @@ int main()
     NewNode(Head2, 5);
     struct Node*head2 = FirstNodeDeleter(Head2);
 
-    struct Node*R1 = Reverse_Linked_by_Pointers(head1);
-    struct Node*R2 = Reverse_Linked_by_Pointers(head2);
-    Traversal(R1);
-    cout<<endl;
-    Traversal(R2);
-
-    struct Node*ptr1 = R1;
-    struct Node*ptr2 = R2;
+    struct Node*ptr1 = Reverse_Linked_by_Pointers(head1);
+    struct Node*ptr2 = Reverse_Linked_by_Pointers(head2);
 
     struct Node*ResultList = (struct Node*)malloc(sizeof(struct Node));
     ResultList->data = (ptr1->data + ptr2->data)%10;
@@ -104,9 +98,6 @@ int main()
         ptr1 = ptr1->next;
         ptr2 = ptr2->next;
     }
-
-    cout<<endl;
-    Traversal(ResultList);
     struct Node*FinalList = Reverse_Linked_by_Pointers(ResultList);
     cout<<endl;
     Traversal(FinalList);
