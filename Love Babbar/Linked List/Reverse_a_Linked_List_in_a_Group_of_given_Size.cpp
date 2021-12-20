@@ -9,14 +9,16 @@ struct Node
     struct Node*next;
 };
 
-void Traversal(struct Node *head)
+struct Node*Traversal(struct Node *head)
 {
     struct Node *ptr = head;
-    while (ptr != NULL)
+    while (ptr->next != NULL)
     {
         cout << "Element : " << ptr->data << endl;
         ptr = ptr->next;
     }
+    cout<<ptr->data<<endl;
+    return ptr;
 }
 
 void createNode(struct Node*head, int value)
@@ -34,14 +36,14 @@ void createNode(struct Node*head, int value)
 
 void Reverse_Nodes(Node*head, int n)
 {
-    struct Node*ptr = head;
+    // struct Node*ptr = head;
 
     struct Node*previous = NULL;
     struct Node*current = head;
     struct Node*agla = NULL;
 
     struct Node*nextHead = NULL;  // To save pointer of next n sized linked list.
-
+    
     int i = 0;
     while(i<n and current != NULL)   //used to current != NULL for last loop to reverse
     {
@@ -52,13 +54,14 @@ void Reverse_Nodes(Node*head, int n)
         current = agla;
         i++;
     }
-    Traversal(previous);
 
+    struct Node* Last_Node_of_Previous_List = Traversal(previous);
+    Last_Node_of_Previous_List->next = nextHead;
     Reverse_Nodes(nextHead, n);
 }
 
 int main()
-{
+{ 
     struct Node*head = (struct Node*)malloc(sizeof(struct Node));
     head->data = 1;
     head->next = NULL;
