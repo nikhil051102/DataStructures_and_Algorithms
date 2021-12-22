@@ -42,7 +42,7 @@ void Reverse_Nodes(Node*head, int n)
     struct Node*current = head;
     struct Node*agla = NULL;
 
-    struct Node*nextHead = NULL;  // To save pointer of next n sized linked list.
+    struct Node*nextHead = NULL;  // To save pointer of next n sized Linked List.
     
     int i = 0;
     while(i<n and current != NULL)   //used to current != NULL for last loop to reverse
