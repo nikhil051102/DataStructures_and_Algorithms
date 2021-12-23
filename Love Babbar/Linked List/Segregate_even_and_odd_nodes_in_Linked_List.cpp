@@ -34,27 +34,47 @@ void CreateNode(Node *head, int value)
 
 struct Node *Segregate_Even_and_Odd_nodes(Node *head)
 {
-    struct Node *ptr = head;
     struct Node *even = NULL;
     struct Node *odd = NULL;
-    
-    int x;
-    while (ptr != NULL)
+    struct Node *e = NULL;
+    struct Node *o = NULL;
+
+    while (head != NULL)
     {
-        // x = 0 means Even Number 
+        // x = 0 means Even Number
         // x = 1 means Odd Number
-        if ((ptr->data)%2 == 0)
+        if ((head->data) % 2 == 0)
         {
-            x = 0;
-            
+            if (even == NULL)
+            {
+                even = head;
+                e = head;
+            }
+            else
+            {
+                e->next = head;
+                e = e->next;
+            }
         }
         else
         {
-            x = 1;
+            if (odd == NULL)
+            {
+                odd = head;
+                o = head;
+            }
+            else
+            {
+                o->next = head;
+                o = o->next;
+            }
         }
-        ptr = ptr->next;
+        head = head->next;
     }
-    
+    if(e) e->next = odd;
+    if(o) o->next = NULL;
+    if(even) return even;
+    return odd;
 }
 
 int main()
@@ -70,6 +90,6 @@ int main()
     CreateNode(head, 4);
     CreateNode(head, 6);
 
-    Segregate_Even_and_Odd_nodes(head);
+    Traversal(Segregate_Even_and_Odd_nodes(head));
     return 0;
 }
