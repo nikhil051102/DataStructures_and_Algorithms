@@ -9,16 +9,14 @@ struct Node
     struct Node*next;
 };
 
-struct Node*Traversal(struct Node *head)
+void Traversal(struct Node *head)
 {
     struct Node *ptr = head;
-    while (ptr->next != NULL)
+    while (ptr != NULL)
     {
         cout << "Element : " << ptr->data << endl;
         ptr = ptr->next;
     }
-    cout<<ptr->data<<endl;
-    return ptr;
 }
 
 void createNode(struct Node*head, int value)
@@ -34,7 +32,7 @@ void createNode(struct Node*head, int value)
     ptr->next = n;
 }
 
-void Reverse_Nodes(Node*head, int n)
+struct Node*Reverse_Nodes(Node*head, int n)
 {
     // struct Node*ptr = head;
 
@@ -54,10 +52,11 @@ void Reverse_Nodes(Node*head, int n)
         current = agla;
         i++;
     }
-
-    struct Node* Last_Node_of_Previous_List = Traversal(previous);
-    Last_Node_of_Previous_List->next = nextHead;
-    Reverse_Nodes(nextHead, n);
+    if(nextHead != NULL)
+    {
+        head->next = Reverse_Nodes(nextHead, n);
+    }
+    return previous;
 }
 
 int main()
@@ -77,6 +76,7 @@ int main()
     cout<<"Value of n : ";
     cin>>n;
 
-    Reverse_Nodes(head, n);
+    struct Node*node = Reverse_Nodes(head, n);
+    Traversal(node);
     return 0;
 }
