@@ -46,6 +46,7 @@ struct Node *Segregate_Even_and_Odd_nodes(Node *head)
         if ((ptr->data)%2 == 0)
         {
             x = 0;
+            
         }
         else
         {
