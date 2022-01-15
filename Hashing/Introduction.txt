@@ -1,0 +1,2 @@
+-> Hashing is not data structure but it helps to build another data structures like hashmap, hashset, hashtable, unordered set, etc.
+-> Insertin, Deletion and Searching is done in O(1) time that's why Hashing is important concept.
