@@ -7,3 +7,12 @@ Heap is Binary Tree based data structure where it is not necessarily BST.
 
 ★ MinHeap
 -> If the root node of tree is less than the children nodes, then it is a minHeap.
+
+-> If there are n nodes present in Heap then its height is O(log n).
+
+
+-> Important Properties
+Node -> i
+Parent(i) -> |i/2|
+Left Child(i) -> 2i
+Right Child(i) -> 2i+1

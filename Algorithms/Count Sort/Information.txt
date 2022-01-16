@@ -1,0 +1,13 @@
+Time Complexity of Count Sort: O(n+k) where n is the number of elements in the array and k is the maximum element of given array.
+but sometimes Time Complexity of count sort is assumed to be O(n).
+Space Complexity of Count Sort: O(n+k)
+
+
+--> Steps to Apply this Algorithm:  <--
+1) Find maximum element of given array.
+2) Make an Array of size equal to the value of maximum element of given array.
+3) Initialize the count of newArray to 0.
+4) Loop through the given array and increment the count by +1 of newArray at the index of the element.
+5) Loop through the newArray and print the element at the index of the count.
+
+--> We are going to make new Array which is going to store element in sorted order instead of that we are going to modify the given array that's why we are using reference operator.

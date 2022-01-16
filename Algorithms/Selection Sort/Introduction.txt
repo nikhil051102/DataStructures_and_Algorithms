@@ -1,0 +1,4 @@
+Selection Sort Algorithm : 
+Step 1 : Find the minimum element in the array and swap it with the first element.
+Step 2 : Find the minimum element in the array starting from the second element and swap it with the second element.
+Do above steps until we reach end of an array.
