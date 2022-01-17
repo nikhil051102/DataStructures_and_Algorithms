@@ -1,0 +1,1 @@
+Adaptive algorithm : If we give sorted array then if algorithm is not making any changes in it then algorithm is adaptive.
