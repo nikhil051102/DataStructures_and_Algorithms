@@ -26,7 +26,7 @@ void MergeSort(int*Array, int n)
         newArray[Array[i]] += 1;
     }
     
-    //We are not going to make new Array to store elements in sorted instead of it we are going to modify the values of given array.
+    //We are not going to make new Array to store elements in sorted instead of it we are going to modify the values of given
     int i=0;
     int x=0;
     while (i<max_element+1)
@@ -43,7 +43,7 @@ void MergeSort(int*Array, int n)
             newArray[i] -= 1;
             i++;
         }
-        else if (newArray[i] == 2)
+        else if (newArray[i] > 1)
         {
             Array[x] = i;
             x++;
@@ -56,8 +56,8 @@ void MergeSort(int*Array, int n)
 
 int main()
 {
-    int a[7] = {3, 1, 9, 7, 1, 2, 4};
-    int n=7;
+    int a[8] = {3, 1, 9, 7, 1, 2, 4, 1};
+    int n=8;
     MergeSort(a, n);
     cout<<"Array after count Sort : ";
     for (int j = 0; j < n; j++)

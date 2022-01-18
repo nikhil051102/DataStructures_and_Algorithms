@@ -1,0 +1,12 @@
+Time Complexity: O(n^2)
+If given array is alreadyn sorted, then the time complexity is O(n).
+Space Complexity: O(1)
+Stable Algorithm
+Not Adaptive Algorithm but we can make it.
+
+
+Steps to Implement Bubble Sort Algorithm:
+1) Start from the first element and compare it with the next element.
+2) If the first element is greater than the next element, swap the elements.
+3) Continue the process until the last element is reached.
+4) Repeat the process until the array is sorted.
