@@ -36,5 +36,6 @@
         "string_view": "cpp",
         "iosfwd": "cpp",
         "unordered_set": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }
