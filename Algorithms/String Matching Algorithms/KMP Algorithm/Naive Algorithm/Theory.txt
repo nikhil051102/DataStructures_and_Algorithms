@@ -1,0 +1,24 @@
+Link : https://medium.com/@krupa_110/the-naive-string-matching-algorithm-be7992ebbd1d
+
+Best Case : →The best case occurs when the first character of the pattern is not present in text at all.
+            txt[] = "BBACCAADDEE";
+            pat[] = "HBB";
+            The number of comparisons in best case is O(n).
+
+Worst Case : What is the worst case ?
+            →The worst case of Naive Pattern Searching occurs in following scenarios.
+            1) When all characters of the text and pattern are same.
+            txt[] = "DDDDDDDDDDDD";
+            pat[] = "DDDDD";
+            2) Worst case also occurs when only the last character is different.
+            txt[] = "VVVVVVVVVVVVK";
+            pat[] = "VVVK";
+            The number of comparisons in the worst case is O(m*(n-m+1)).
+
+Advantages:
+            1) No Pre-processing phase required because the running time of Naive-String-Matcher is equal to its matching time.
+            2) No extra space are needed.
+            3) Also,the comparisons can be done in any order.
+
+Disadvantage:
+            Naive method is inefficient because information from a shift is not used again.
