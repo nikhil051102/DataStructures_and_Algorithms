@@ -2,7 +2,7 @@ Link : https://medium.com/@krupa_110/the-naive-string-matching-algorithm-be7992e
 
 Best Case : →The best case occurs when the first character of the pattern is not present in text at all.
             txt[] = "BBACCAADDEE";
-            pat[] = "HBB";
+            pat[] = "HBB";f
             The number of comparisons in best case is O(n).
 
 Worst Case : What is the worst case ?
