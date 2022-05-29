@@ -1,49 +1,44 @@
 #include<iostream>
+using namespace std; 
 
-struct MinHeap{
+class MinHeap{
     int *arr;
     int size;
     int capacity;
-};
     
+    public:
     
-void createMinHeap(struct MinHeap* mheap, int c){
-    mheap->size = 0;
-    mheap->capacity = c; 
-    mheap->arr = (int*) malloc(c*sizeof(int));
-}
+    MinHeap(int c){
+    size = 0; 
+    capacity = c; 
+    arr = new int[c];
+    }
 
-int left(int i) { return (2*i + 1); } 
-int right(int i) { return (2*i + 2); } 
-int parent(int i) { return (i-1)/2; } 
-void swap(int *x,int *y)
-{
-    int t = *x;
-    *x = *y;
-    *y = t;
-}
-
-void insert(struct MinHeap* mheap, int x) 
-{ 
-    if (mheap->size == mheap->capacity)return;
-    mheap->size++; 
-    mheap->arr[mheap->size-1]=x; 
+    int left(int i) { return (2*i + 1); } 
+    int right(int i) { return (2*i + 2); } 
+    int parent(int i) { return (i-1)/2; } 
     
-    for (int i=mheap->size-1;i!=0 && mheap->arr[parent(i)]>mheap->arr[i];) 
+    void insert(int x) 
     { 
-       swap(&mheap->arr[i], &mheap->arr[parent(i)]); 
+    if (size == capacity)return;
+    size++; 
+    arr[size-1]=x; 
+ 
+    for (int i=size-1;i!=0 && arr[parent(i)]>arr[i];) 
+    { 
+       swap(arr[i], arr[parent(i)]); 
        i = parent(i); 
     } 
-}
-    
+    }
+};
+
 
 int main() 
 { 
-    struct MinHeap h;
-    createMinHeap(&h,11);
-    insert(&h,3); 
-    insert(&h,2);
-    insert(&h,15);
-    insert(&h,20);
+    MinHeap h(11);
+    h.insert(3); 
+    h.insert(2);
+    h.insert(15);
+    h.insert(20);
     return 0;
 } 
