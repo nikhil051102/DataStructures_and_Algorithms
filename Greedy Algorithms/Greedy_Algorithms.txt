@@ -1,0 +1,12 @@
+Greedy algorithm is an approach of solving problems in most optimised way.
+
+Application :
+1) Activity Selection
+2) Fractional Knapsack
+3) Job Sequencing
+4) Prim's Algorithm
+5) Kruskal's Algorithm
+6) Dijkstra's Algorithm
+7) Huffman Coding
+
+There are some algorithms which does not provide optimised solution but it is useful for NP hard problems like Travelling Salesman Problem.

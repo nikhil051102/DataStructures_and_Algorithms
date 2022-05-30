@@ -38,7 +38,20 @@
         "unordered_set": "cpp",
         "__locale": "cpp",
         "__string": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "__hash_table": "cpp",
+        "__split_buffer": "cpp",
+        "__tree": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "regex": "cpp",
+        "set": "cpp",
+        "span": "cpp",
+        "valarray": "cpp",
+        "ranges": "cpp",
+        "*.tcc": "cpp",
+        "charconv": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }
