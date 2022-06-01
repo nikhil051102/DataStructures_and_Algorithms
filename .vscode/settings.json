@@ -51,7 +51,8 @@
         "valarray": "cpp",
         "ranges": "cpp",
         "*.tcc": "cpp",
-        "charconv": "cpp"
+        "charconv": "cpp",
+        "__functional_03": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }
