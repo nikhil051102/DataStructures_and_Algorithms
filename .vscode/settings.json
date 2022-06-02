@@ -52,7 +52,11 @@
         "ranges": "cpp",
         "*.tcc": "cpp",
         "charconv": "cpp",
-        "__functional_03": "cpp"
+        "__functional_03": "cpp",
+        "__tuple": "cpp",
+        "ios": "cpp",
+        "forward_list": "cpp",
+        "any": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

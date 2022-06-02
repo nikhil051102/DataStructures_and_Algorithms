@@ -1,0 +1,14 @@
+Recursion : When function calls itself indirectly or directly.
+
+Base Case : It is condition when the recursion stops.
+          -> When the recursion stops, the function returns the value.
+          -> writing return; is mandatory in the base case.
+
+Compnonents of Recursion :
+1. Base Case - If base case is not written then it will call segementation fault which means StackOverflow.
+2. Recursive Relation - It is the relation between the base case and the function.
+3. Processing
+
+Types of Recursive Function : 
+1) Tail Recursion : When the function calls itself at the end. Here Base Case -> Processing -> Recursive Relation.
+2) Head Recursion : When the function calls itself at the 2nd. Here Base Case -> Recursive Relation -> Processing.
