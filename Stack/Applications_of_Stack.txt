@@ -1,0 +1,8 @@
+Applications of Stack are:
+1) Function Calls
+2) Checking for balanced Parenthesis
+3) Reversing Items or Strings.
+4) Infix to Postfix Conversion
+5) Postfix/Prefix Evaluation
+6) Stack Span Problem and Its variations
+7) Undo/Redo or Forward/Backward
