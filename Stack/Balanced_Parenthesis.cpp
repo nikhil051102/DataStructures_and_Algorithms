@@ -1,42 +1,45 @@
-// #include<bits/stdc++.h>
+//Parenthesis Matching
 #include<iostream>
 #include<stack>
 using namespace std;
 
-bool matching(char a,char b){
-    return (( a=='(' && b==')' )||( a=='[' && b==']' )||( a=='{' && b=='}' ));
-}
-
-bool isBalanced(string str){
-      
-    stack<char> s; 
-    
-    for (int i = 0; i < str.length(); i++)  
-    { 
-        if (str[i] == '(' || str[i] == '[' || str[i] == '{')  
-        {  
-            s.push(str[i]); 
-        } 
-        else{
-        if (s.empty()==true) 
-            return false;
-        else if(matching(s.top(),str[i])==false)
-            return false;
-        else
-            s.pop();
+void parenthesis_matching(string s) {
+    stack<char> st;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] == '(' || s[i] == '[' || s[i] == '{')
+        {
+            st.push(s[i]);
         }
-    }    
-    return (s.empty()==true); 
+        if (s[i] == ')' || s[i] == ']' || s[i] == '}')
+        {
+            if (s[i] == ')' && st.top() == '(')
+            {
+                st.pop();
+            }
+            else if (s[i] == ']' && st.top() == '[')
+            {
+                st.pop();
+            }
+            else if (s[i] == '}' && st.top() == '{')
+            {
+                st.pop();
+            }
+        }
+    }
+
+    if (st.empty())
+    {
+        cout<<"Balanced Parenthesis";
+    }
+    else {
+        cout<<"Unbalanced";
+    }
 }
 
 int main()
 {
-    string str = "{()}[]"; 
-    
-    if (isBalanced(str)) 
-        cout << "Balanced"; 
-    else
-        cout << "Not Balanced"; 
-
-    return 0; 
+    string s = "{()}";
+    parenthesis_matching(s);
+    return 0;
 }
