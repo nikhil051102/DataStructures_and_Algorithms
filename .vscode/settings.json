@@ -56,7 +56,9 @@
         "__tuple": "cpp",
         "ios": "cpp",
         "forward_list": "cpp",
-        "any": "cpp"
+        "any": "cpp",
+        "variant": "cpp",
+        "iomanip": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

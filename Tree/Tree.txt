@@ -1,0 +1,28 @@
+Tree Data Structure : It is hierarchical data structure. It is recursive in nature.
+
+Components of Tree :
+1. Root Node : It is the starting point of the tree.
+2. Leaf Node : It is the node which has no child.
+3. Internal Node : Nodes which are not leaf nodes.
+4. Child Node : It is the node which is connected to the parent node.
+5. Parent Node : It is the node which is connected to the child node.
+6. Sub-Tree : It is the part of the tree which is connected to the root node.
+7. Descendant : It is the part of the tree which is connected to the leaf node.
+8. Ancestor : It is the part of the tree which is connected to the internal node.
+9. Degree : It is the number of child nodes of a node.
+
+-> All the leaf nodes have the degree 0.
+
+
+Applications of Tree :
+1. To represent hierarchical data 
+        a. Folder Structure
+        b. Organization Structure
+        c. XML/HTML Content (JSON Objects)
+        d. In OOPs (Inheritance)
+        e. In Database (Table Structure)
+2. Binary Search Tree
+3. Binary Heap
+4. B and B+ Trees in DBMS
+5. Spanning and Shortest Path tree in Computer Networks
+6. Parse Tree, Expression Tree in Compilers.

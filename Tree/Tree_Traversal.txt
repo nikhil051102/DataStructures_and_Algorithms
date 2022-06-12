@@ -1,0 +1,9 @@
+Binary Tree Traversal : Process of visiting every node of tree.
+
+Types of Traversal :
+
+1. Breadth First (Level Order) Traversal : Traverses the tree level by level.
+2. Depth First Traversal : Traverses the tree depth by depth.
+        a) Preorder : Root, Left, Right
+        b) Inorder : Left, Root, Right
+        c) Postorder : Left, Right, Root

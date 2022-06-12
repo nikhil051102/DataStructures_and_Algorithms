@@ -1,0 +1,1 @@
+Binary Tree Data Structure : Every Node has atmost 2 children except the leaf nodes.
