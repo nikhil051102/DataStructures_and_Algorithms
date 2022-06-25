@@ -49,14 +49,14 @@ int main()
     // 1) Iterative Approach
     struct Node *previous = NULL;
     struct Node *current = head;
-    struct Node *next = NULL;
+    struct Node *nxt = NULL;
 
     while (current != NULL)
     {
-        next = current->next;
+        nxt = current->next;
         current->next = previous;
         previous = current;
-        current = next;
+        current = nxt;
     }
 
     cout<<endl<<"Reversed Linked List : "<<endl;
