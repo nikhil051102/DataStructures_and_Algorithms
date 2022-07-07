@@ -1,0 +1,2 @@
+1) Difference between Substring and Subsequence
+-> In Substring, Characters are consecutive and In Subsequence characters are not consecutive.

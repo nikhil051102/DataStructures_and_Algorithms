@@ -1,0 +1,10 @@
+1) Either the size is fixed and preallocated (in both fixed size and variable sized arrays),
+   and worse case insertion at the end is O(n)
+2) Insertion in the middle(or beginning) is costly.
+3) Deletion from the middle(or beginning) is costly.
+4) Implementation of data structures like queue and dequeue is complex with arrays.
+
+
+Qs which are hard to implement using arrays
+1) How to implement Round Robin Scheduling ?
+2) We have multiple sorted sequences and we need to merge then frequently.

@@ -1,0 +1,4 @@
+1) Delete Node without head pointer
+2) Remove Duplicates from sorted Linked list
+3) Merge Two Sorted Linked Lists.
+4) Swap Kth Nodes 
