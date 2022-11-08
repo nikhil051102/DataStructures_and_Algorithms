@@ -17,13 +17,15 @@ struct Node {
     }
 };
 
-void solution(struct Node*root, int k) {
-    if(root == NULL) {return;}
-    if(k == 0) {cout<<root->data<<" ";}
+int height(struct Node *root) {
+    if(root==NULL) {return 0;}
     else {
-        solution(root->left, k-1);
-        solution(root->right, k-1);
+        return max(height(root->left), height(root->right))+1;
     }
+}
+
+void Print_Nodes(struct Node*root, int k) {
+    
 }
 
 int main()
@@ -34,6 +36,10 @@ int main()
     root->left->left = new Node(40);
     root->left->right = new Node(50);
 
-    solution(root, 2);
+    int n = height(root);
+    for (int i = 0; i < n; i++)
+    {
+        Print_Nodes(root, i);
+    }
     return 0;
 }

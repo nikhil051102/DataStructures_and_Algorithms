@@ -91,11 +91,12 @@ int main()
     root->left->left = new Node(40);
     root->left->right = new Node(50);
 
-    Approach 1
+    // Approach 1
      int n = height(root);
      for (int i = 0; i < n; i++)
      {
          Level_Order_Traversal(root, i);
+         cout<<endl;
      }
 
     // Approach 2 : Using Queue
