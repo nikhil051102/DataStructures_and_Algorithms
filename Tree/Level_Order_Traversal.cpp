@@ -32,23 +32,22 @@ int height(struct Node *root)
 }
 
 // Approach 1
- void Level_Order_Traversal(struct Node *root, int level)
- {
-     if (root == NULL)
-     {
-         return;
-     }
-     if (level == 0)
-     {
-         cout << root->data << " ";
-     }
-     else
-     {
-         Level_Order_Traversal(root->left, level - 1);
-         Level_Order_Traversal(root->right, level - 1);
-     }
- }
-
+void Level_Order_Traversal(struct Node *root, int level)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    if (level == 0)
+    {
+        cout << root->data << " ";
+    }
+    else
+    {
+        Level_Order_Traversal(root->left, level - 1);
+        Level_Order_Traversal(root->right, level - 1);
+    }
+}
 
 // Approach 2 : https://youtu.be/ICpp88mcB-k
 // Iterative method to find height of Binary Tree
@@ -92,12 +91,12 @@ int main()
     root->left->right = new Node(50);
 
     // Approach 1
-     int n = height(root);
-     for (int i = 0; i < n; i++)
-     {
-         Level_Order_Traversal(root, i);
-         cout<<endl;
-     }
+    int n = height(root);
+    for (int i = 0; i < n; i++)
+    {
+        Level_Order_Traversal(root, i);
+        cout << endl;
+    }
 
     // Approach 2 : Using Queue
     // Using_Queue(root);
